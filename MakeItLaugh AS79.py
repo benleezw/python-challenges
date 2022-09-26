@@ -8,6 +8,6 @@ def makeitlaugh(string):
     string = string.replace("o", "haha")
     string = string.replace("u", "haha")
     return string
-makeitlaugh(string)
+
 
             
