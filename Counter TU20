@@ -1,0 +1,8 @@
+with open("counter.txt", "r") as whole_file:
+    linec = 0
+    for line in whole_file:
+        linec = linec + 1
+with open("counter.txt", "a") as existing_file:
+    for i in range(linec + 1, linec + 11):
+        line_to_write = str(i)+"\n"
+        existing_file.write(line_to_write)
