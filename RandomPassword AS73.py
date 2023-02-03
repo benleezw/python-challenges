@@ -10,5 +10,6 @@ for i in range(0, length):
     randpos = randint(0, len(pass1)-1)
     pass2 = pass2 + pass1[randpos]
     pass1 = pass1.replace(pass1[randpos], "", 1)
-pass2 = pass2 + special[randint(0, len(special))]
+for i in range(0, 3):
+    pass2 = pass2 + special[randint(0, len(special))]
 print(pass2)
