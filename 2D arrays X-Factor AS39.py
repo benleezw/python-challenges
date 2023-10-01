@@ -131,7 +131,7 @@ TheWombats = [
     "Lost in the Post - The Wombats"
 ]
 
-artistlist = [DominicFike, jid, Joji, c418, Laufey]
+artistlist = [DominicFike, jid, Joji, c418, Laufey, Radiohead, beabadoobee, Hozier, SleepingAtLast, TheWombats]
 artistorder = []
 artistorder_pos = 0
 playlist = []
