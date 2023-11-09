@@ -65,98 +65,27 @@ Laufey = [
     "Misty - Laufey"
 ]
 
-Radiohead = [
-    "15 Step - Radiohead",
-    "Bodysnatchers - Radiohead",
-    "Nude - Radiohead",
-    "Weird Fishes/ Arpeggi - Radiohead",
-    "All I Need - Radiohead",
-    "Faust Arp - Radiohead",
-    "Reckoner - Radiohead",
-    "House Of Cards - Radiohead",
-    "Jigsaw Falling Into Place - Radiohead",
-    "Videotape - Radiohead",
-]
-
-beabadoobee = [
-    "Care - beabadoobee",
-    "Worth It - beabadoobee",
-    "Dye It Red - beabadoobee",
-    "Back To Mars - beabadoobee",
-    "Charlie Brown - beabadoobee",
-    "Emo Song - beabadoobee",
-    "Sorry - beabadoobee",
-    "Sorry - beabadoobee",
-    "Further Away - beabadoobee",
-    "Horen Sarrison - beabadoobee",
-    "How Was Your Day?"
-]
-
-Hozier = [
-    "Take Me To Church - Hozier",
-    "Cherry Wine - Hozier",
-    "De Shelby (Part 1) - Hozier",
-    "Eat Your Young - Hozier",
-    "Like Real People Do - Hozier",
-    "Shrike - Hozier",
-    "Almost (Sweet Music) - Hozier",
-    "De Shelby (Part 2) - Hozier",
-    "Would That I - Hozier",
-    "Francesca - Hozier"
-]
-
-SleepingAtLast = [
-    "Sun - Sleeping At Last",
-    "Venus - Sleeping At Last",
-    "Mercury - Sleeping At Last",
-    "Earth - Sleeping At Last",
-    "Moon - Sleeping At Last",
-    "Jupiter - Sleeping At Last",
-    "Mars - Sleeping At Last",
-    "Saturn - Sleeping At Last",
-    "Pluto - Sleeping At Last",
-    "Venus - Sleeping At Last"
-]
-
-TheWombats = [
-    "Greek Tragedy - The Wombats",
-    "Let's Dance to Joy Division - The Wombats",
-    "Kill the Director - The Wombats",
-    "Turn - The Wombats",
-    "Moving to New York - The Wombats",
-    "Pink Lemonade - The Wombats",
-    "Tokyo (Vampires & Wolves) - The Wombats",
-    "Lemon to a Knife Fight - The Wombats",
-    "Backfire at the Disco - The Wombats",
-    "Lost in the Post - The Wombats"
-]
-
-artistlist = [DominicFike, jid, Joji, c418, Laufey, Radiohead, beabadoobee, Hozier, SleepingAtLast, TheWombats]
-artistorder = []
-artistorder_pos = 0
+artistlist = [jid, DominicFike, Joji, c418, Laufey]
 playlist = []
 songcount = 0
+prevartist = 0
 while songcount < 10:
     currentartist = randint(0,len(artistlist) - 1)
     currentsong = randint(0,9)
-    if len(playlist) > 1:
-        # print(currentartist)
-        # print(artistorder[artistorder_pos - 2])
-        # print(artistorder[artistorder_pos - 3])
-        # print()
-        while currentartist  == artistorder[artistorder_pos - 1] or currentartist  == artistorder[artistorder_pos - 2] or currentartist == artistorder[artistorder_pos - 3]:
-            # print("reshuffling")
+    while currentartist == prevartist:
+        currentartist = randint(0,len(artistlist) - 1)
+    if len(playlist) > 2:
+        # print(playlist[songcount - 3])
+        while playlist[songcount - 3] in artistlist[currentartist]:
             currentartist = randint(0,len(artistlist) - 1)
-            currentsong = randint(0,9)
     # print(currentartist)
     # print(artistlist[currentartist][currentsong])
     while str(artistlist[currentartist][currentsong]) in playlist:
         currentsong = randint(0,9)
     playlist.append(artistlist[currentartist][currentsong])
-    artistorder.append(currentartist)
-    # print(artistorder)
+    prevartist = currentartist
     songcount += 1
-    artistorder_pos += 1
+
 print(playlist)
     
 
