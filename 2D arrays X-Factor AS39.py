@@ -76,7 +76,7 @@ while songcount < 10:
         currentartist = randint(0,len(artistlist) - 1)
     if len(playlist) > 2:
         # print(playlist[songcount - 3])
-        while playlist[songcount - 3] in artistlist[currentartist]:
+        while playlist[songcount - 2] in artistlist[currentartist]:
             currentartist = randint(0,len(artistlist) - 1)
     # print(currentartist)
     # print(artistlist[currentartist][currentsong])
